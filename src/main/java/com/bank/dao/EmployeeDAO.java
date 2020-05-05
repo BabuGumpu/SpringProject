@@ -6,13 +6,15 @@ package com.bank.dao;/*
  */
 
 import com.bank.model.Employees;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface EmployeeDAO extends CrudRepository<Employees,Long> {
+public interface EmployeeDAO {
 
-    List<Employees> findAll();
-    long count();
+    List<Employees> getAllEmployees();
+
+    Employees getEmployeeByID(long empID);
+
+    long getTotalNumberOfEmployees();
 
 }

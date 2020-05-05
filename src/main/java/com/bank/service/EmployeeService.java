@@ -6,10 +6,14 @@ package com.bank.service;/*
  */
 
 import com.bank.model.Employees;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface EmployeeService {
-    List<Employees> findAll();
-    long count();
+    public List<Employees> getAllEmployees();
+
+    public Employees getEmployeeByID(long empID);
+
+    public long getTotalNumberOfEmployees();
 }

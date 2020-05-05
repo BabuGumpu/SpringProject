@@ -1,68 +1,53 @@
 package com.bank.dao;/*
  *
  * @project - SpringProject
- * @author - Babu Gumpu , on 15/05/2019
+ * @author - Babu Gumpu , on 05/05/2020
  *
  */
 
 import com.bank.model.Employees;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
-import java.util.Optional;
 
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
-    @Override
-    public <S extends Employees> S save(S s) {
-        return null;
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
+    private EntityManager entityManager;
+
+    @Autowired
+    public EmployeeDAOImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override
-    public <S extends Employees> Iterable<S> saveAll(Iterable<S> iterable) {
-        return null;
+    public List<Employees> getAllEmployees() {
+        logger.info("::getAllEmployees  Started -->");
+        Query query = entityManager.createQuery("from employees");
+        logger.info("::getAllEmployees  query -->{}", query.toString());
+        logger.info("::getAllEmployees  End -->");
+        return query.getResultList();
     }
 
     @Override
-    public Optional<Employees> findById(Long aLong) {
-        return Optional.empty();
+    public Employees getEmployeeByID(long empID) {
+        logger.info("::getEmployeeByID  Started -->");
+        Employees employees = entityManager.find(Employees.class, empID);
+        logger.info("::getEmployeeByID  End -->");
+        return employees;
     }
 
     @Override
-    public boolean existsById(Long aLong) {
-        return false;
-    }
-
-    @Override
-    public List<Employees> findAll() {
-        return null;
-    }
-
-    @Override
-    public Iterable<Employees> findAllById(Iterable<Long> iterable) {
-        return null;
-    }
-
-    @Override
-    public long count() {
-        return 0;
-    }
-
-    @Override
-    public void deleteById(Long aLong) {
-
-    }
-
-    @Override
-    public void delete(Employees employees) {
-
-    }
-
-    @Override
-    public void deleteAll(Iterable<? extends Employees> iterable) {
-
-    }
-
-    @Override
-    public void deleteAll() {
-
+    public long getTotalNumberOfEmployees() {
+        logger.info("::getTotalNumberOfEmployees  Started -->");
+        Query query = entityManager.createQuery("from employees");
+        logger.info("::getTotalNumberOfEmployees  query -->{}", query.toString());
+        logger.info("::getTotalNumberOfEmployees  End -->");
+        return query.getResultList().size();
     }
 }

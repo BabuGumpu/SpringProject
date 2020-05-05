@@ -30,7 +30,7 @@ public class EmployeeController {
     public Iterable<Employees> getAllEmployees() {
         logger.info("::getAllEmployees  Started -->");
         // This returns a JSON or XML with the users
-        return employeeDAOImpl.findAll();
+        return employeeDAOImpl.getAllEmployees();
     }
 
     @GetMapping(path = "/test")
@@ -44,6 +44,6 @@ public class EmployeeController {
     @ResponseBody
     public Long getCount(){
         logger.info("::getTCount  Started -->");
-        return employeeDAOImpl.count();
+        return employeeDAOImpl.getTotalNumberOfEmployees();
     }
 }
