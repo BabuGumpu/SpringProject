@@ -5,32 +5,31 @@ package com.bank.controller;/*
  *
  */
 
-import com.bank.dao.EmployeeDAO;
 import com.bank.model.Employees;
+import com.bank.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping(path = "/api")
 public class EmployeeController {
 
     private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @Autowired
-    EmployeeDAO employeeDAOImpl;
-    //EmployeeDAO employeeDAO;
+    EmployeeService employeeService;
 
     @GetMapping(path = "/all")
     @ResponseBody
     public Iterable<Employees> getAllEmployees() {
         logger.info("::getAllEmployees  Started -->");
         // This returns a JSON or XML with the users
-        return employeeDAOImpl.getAllEmployees();
+        return employeeService.getAllEmployees();
     }
 
     @GetMapping(path = "/test")
@@ -44,6 +43,6 @@ public class EmployeeController {
     @ResponseBody
     public Long getCount(){
         logger.info("::getTCount  Started -->");
-        return employeeDAOImpl.getTotalNumberOfEmployees();
+        return employeeService.getTotalNumberOfEmployees();
     }
 }
