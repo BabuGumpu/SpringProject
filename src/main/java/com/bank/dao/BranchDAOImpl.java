@@ -29,7 +29,7 @@ public class BranchDAOImpl implements BranchDAO {
     @Override
     public List<Branch> getAllBranches() {
         logger.info("::getAllBranches  Started -->");
-        Query query = entityManager.createQuery("from branch");
+        Query query = entityManager.createQuery("from Branch");
         List<Branch> branchList = query.getResultList();
         logger.info("::getAllBranches  End -->");
         return branchList;
@@ -46,7 +46,7 @@ public class BranchDAOImpl implements BranchDAO {
     @Override
     public long getTotalNumberOfBranches() {
         logger.info("::getTotalNumberOfBranches  Started -->");
-        Query query = entityManager.createQuery("from branch");
+        Query query = entityManager.createQuery("from Branch");
         logger.info("::getTotalNumberOfBranches  query -->{}", query.toString());
         logger.info("::getTotalNumberOfBranches  End -->");
         return query.getResultList().size();

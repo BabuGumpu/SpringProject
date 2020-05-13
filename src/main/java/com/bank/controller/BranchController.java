@@ -31,6 +31,7 @@ public class BranchController {
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @ResponseBody
     public List<Branch> getAllBranches() {
         logger.info("::getAllBranches  Started -->");
         // This returns a JSON or XML with the users
@@ -40,12 +41,14 @@ public class BranchController {
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @ResponseBody
     public String getTest() {
         logger.info("::getTest  Started -->");
         return "Branch Testing";
     }
 
     @RequestMapping(path = "/count")
+    @ResponseBody
     public Long getCount() {
         logger.info("::getCount  Started -->");
         return branchService.getTotalNumberOfBranches();
