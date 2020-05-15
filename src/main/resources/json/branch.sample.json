@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "LastUpdated": "2020-04-20T10:06:30.429Z",
+    "TotalResults": 997,
+    "Agreement": "Use of the APIs and any related data will be subject to the terms of the Open Licence and subject to terms and conditions",
+    "License": "https://www.openbanking.org.uk/open-licence",
+    "TermsOfUse": "https://www.openbanking.org.uk/terms"
+  },
+  "data": [
+    {
+      "Brand": [
+        {
+          "BrandName": "Lloyds Bank",
+          "Branch": [
+            {
+              "Identification": "77952700",
+              "SequenceNumber": "00",
+              "Name": "STROOD",
+              "Type": "Physical",
+              "CustomerSegment": [
+                "Personal",
+                "Business"
+              ],
+              "Accessibility": [
+                "WheelchairAccess"
+              ],
+              "OtherServiceAndFacility": [
+                {
+                  "Code": "ATMB",
+                  "Name": "ATMAtBranch",
+                  "Description": "ATMAtBranch"
+                }
+              ],
+              "Availability": {
+                "StandardAvailability": {
+                  "Day": [
+                    {
+                      "Name": "Monday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:00",
+                          "ClosingTime": "17:00"
+                        }
+                      ]
+                    },
+                    {
+                      "Name": "Tuesday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:00",
+                          "ClosingTime": "17:00"
+                        }
+                      ]
+                    },
+                    {
+                      "Name": "Wednesday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:30",
+                          "ClosingTime": "17:00"
+                        }
+                      ]
+                    },
+                    {
+                      "Name": "Thursday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:00",
+                          "ClosingTime": "17:00"
+                        }
+                      ]
+                    },
+                    {
+                      "Name": "Friday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:00",
+                          "ClosingTime": "17:00"
+                        }
+                      ]
+                    },
+                    {
+                      "Name": "Saturday",
+                      "OpeningHours": [
+                        {
+                          "OpeningTime": "09:00",
+                          "ClosingTime": "13:00"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "ContactInfo": [
+                {
+                  "ContactType": "Phone",
+                  "ContactContent": "+44-3453000000"
+                },
+                {
+                  "ContactType": "Fax",
+                  "ContactContent": "+44-1245704705"
+                }
+              ],
+              "PostalAddress": {
+                "AddressLine": [
+                  "LLOYDS BRANCH 129-131 HIGH STREET"
+                ],
+                "TownName": "STROOD",
+                "CountrySubDivision": [
+                  "KENT"
+                ],
+                "Country": "GB",
+                "PostCode": "ME2 4TW",
+                "GeoLocation": {
+                  "GeographicCoordinates": {
+                    "Latitude": "51.395718",
+                    "Longitude": "0.493932"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
