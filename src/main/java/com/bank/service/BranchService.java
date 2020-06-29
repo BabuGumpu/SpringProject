@@ -5,18 +5,12 @@ package com.bank.service;/*
  *
  */
 
-import com.bank.model.Branch;
 import com.bank.pojo.BranchMain;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-
 public interface BranchService {
-    public List<Branch> getAllBranches();
 
-    public Branch getBranchByID(long branchID);
 
     public ResponseEntity<BranchMain> getBranches();
 
-    public long getTotalNumberOfBranches();
 }

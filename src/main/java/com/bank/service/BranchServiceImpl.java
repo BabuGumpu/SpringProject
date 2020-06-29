@@ -6,7 +6,6 @@ package com.bank.service;/*
  */
 
 import com.bank.dao.BranchDAO;
-import com.bank.model.Branch;
 import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,9 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class BranchServiceImpl implements BranchService {
@@ -29,29 +25,10 @@ public class BranchServiceImpl implements BranchService {
     }
 
     @Override
-    @Transactional
-    public List<Branch> getAllBranches() {
-        logger.info("::getAllBranches Started -->");
-        return branchDAO.getAllBranches();
-    }
-
-    @Override
-    @Transactional
-    public Branch getBranchByID(long branchID) {
-        logger.info("::getBranchByID Started -->");
-        return branchDAO.getBranchByID(branchID);
-    }
-
-    @Override
     public ResponseEntity<BranchMain> getBranches() {
         logger.info("::getBranches Started -->");
         return branchDAO.getBranches();
     }
 
-    @Override
-    @Transactional
-    public long getTotalNumberOfBranches() {
-        logger.info("::getTotalNumberOfBranches Started -->");
-        return branchDAO.getTotalNumberOfBranches();
-    }
+
 }

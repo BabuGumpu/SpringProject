@@ -5,15 +5,9 @@ package com.bank.dao;/*
  *
  */
 
-import com.bank.model.Branch;
 import com.bank.pojo.BranchMain;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-
 public interface BranchDAO {
-    List<Branch> getAllBranches();
-    Branch getBranchByID(long branchID);
     ResponseEntity<BranchMain> getBranches();
-    long getTotalNumberOfBranches();
 }
