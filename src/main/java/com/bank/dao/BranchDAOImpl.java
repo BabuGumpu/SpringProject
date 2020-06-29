@@ -6,6 +6,7 @@ package com.bank.dao;/*
  */
 
 import com.bank.model.Branch;
+import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,13 @@ public class BranchDAOImpl implements BranchDAO {
         logger.info("::getTotalNumberOfBranches  query -->{}", query.toString());
         logger.info("::getTotalNumberOfBranches  End -->");
         return query.getResultList().size();
+    }
+
+    @Override
+    public BranchMain getBranches() {
+        logger.info("::getBranches  Started -->");
+        BranchMain branchMain = new BranchMain();
+        logger.info("::getBranches  End -->");
+        return branchMain;
     }
 }
