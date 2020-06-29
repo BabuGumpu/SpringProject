@@ -7,6 +7,7 @@ package com.bank.service;/*
 
 import com.bank.dao.BranchDAO;
 import com.bank.model.Branch;
+import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,12 @@ public class BranchServiceImpl implements BranchService {
     public Branch getBranchByID(long branchID) {
         logger.info("::getBranchByID Started -->");
         return branchDAO.getBranchByID(branchID);
+    }
+
+    @Override
+    public BranchMain getBranches() {
+        logger.info("::getBranches Started -->");
+        return branchDAO.getBranches();
     }
 
     @Override
