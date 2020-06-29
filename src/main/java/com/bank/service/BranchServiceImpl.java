@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,7 +43,7 @@ public class BranchServiceImpl implements BranchService {
     }
 
     @Override
-    public BranchMain getBranches() {
+    public ResponseEntity<BranchMain> getBranches() {
         logger.info("::getBranches Started -->");
         return branchDAO.getBranches();
     }
