@@ -13,4 +13,5 @@ public interface BranchService {
 
     public ResponseEntity<BranchMain> getBranches();
 
+    ResponseEntity<BranchMain> getBranchesByBrand(String brandName);
 }

@@ -10,4 +10,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface BranchDAO {
     ResponseEntity<BranchMain> getBranches();
+
+    ResponseEntity<BranchMain> getBranchesByBrand(String brandName);
 }

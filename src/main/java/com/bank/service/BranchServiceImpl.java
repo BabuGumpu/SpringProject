@@ -30,5 +30,11 @@ public class BranchServiceImpl implements BranchService {
         return branchDAO.getBranches();
     }
 
+    @Override
+    public ResponseEntity<BranchMain> getBranchesByBrand(String brandName) {
+        logger.info("::getBranchesByBrand Started -->");
+        return branchDAO.getBranchesByBrand(brandName);
+    }
+
 
 }

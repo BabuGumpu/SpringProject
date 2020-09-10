@@ -5,6 +5,7 @@ package com.bank.dao;/*
  *
  */
 
+import com.bank.common.CommonUtils;
 import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,14 +25,25 @@ public class BranchDAOImpl implements BranchDAO {
         final String uri = "https://api.lloydsbank.com/open-banking/v2.2/branches";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
-        logger.info("::getBranches headers -->{}",headers.toString());
-
+        logger.info("::getBranches headers -->{}", headers.toString());
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
-
         ResponseEntity<BranchMain> branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
         //BranchMain branchMain = restTemplate.getForObject(uri, BranchMain.class);
         logger.info("::getBranches  End -->");
+        return branchMain;
+    }
+
+    @Override
+    public ResponseEntity<BranchMain> getBranchesByBrand(String brandName) {
+        logger.info("::getBranchesByBrand  Started -->");
+        final String uri = CommonUtils.getURIByBrand(brandName);
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+        ResponseEntity<BranchMain> branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
+        logger.info("::getBranchesByBrand  Completed -->");
         return branchMain;
     }
 }
