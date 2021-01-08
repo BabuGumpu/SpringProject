@@ -5,50 +5,61 @@ package com.bank.common;/*
  *
  */
 
-import com.bank.dao.BranchDAOImpl;
-import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties;
-import org.springframework.http.*;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.Arrays;
 
 public class CommonUtils {
     private static final Logger logger = LoggerFactory.getLogger(CommonUtils.class);
 
+    private CommonUtils() {
+        throw new IllegalStateException("CommonUtils class");
+    }
+
     public static String getURIByBrand(String brandName) {
-        logger.info("::getURIByBrand  Started -->");
+        logger.info("::getURIByBrand  Started brandName -->{}", brandName);
+        String result;
         switch (brandName) {
-            case Constants.BOI:
+            case "BOI":
                 return Constants.BOI_BRANCH_2_2;
             case Constants.BOS:
                 return Constants.BOS_BRANCH_2_2;
             case Constants.BARCLAYS:
-                return Constants.BARCLAYS_BRANCH_2_2;
+                result = Constants.BARCLAYS_BRANCH_2_2;
+                break;
             case Constants.DANSKE:
-                return Constants.DANSKE_BRANCH_2_2;
+                result = Constants.DANSKE_BRANCH_2_2;
+                break;
             case Constants.FTB:
-                return Constants.FTB_BRANCH_2_2;
+                result = Constants.FTB_BRANCH_2_2;
+                break;
             case Constants.HALIFAX:
-                return Constants.HALIFAX_BRANCH_2_2;
+                result = Constants.HALIFAX_BRANCH_2_2;
+                break;
             case Constants.HSBC:
-                return Constants.HSBC_BRANCH_2_2;
+                result = Constants.HSBC_BRANCH_2_2;
+                break;
             case Constants.LLOYDS:
-                return Constants.LLOYDS_BRANCH_2_2;
+                result = Constants.LLOYDS_BRANCH_2_2;
+                break;
             case Constants.NATIONWIDE:
-                return Constants.NATIONWIDE_BRANCH_2_2;
+                result = Constants.NATIONWIDE_BRANCH_2_2;
+                break;
             case Constants.NATWEST:
-                return Constants.NATWEST_BRANCH_2_2;
+                result = Constants.NATWEST_BRANCH_2_2;
+                break;
             case Constants.RBS:
-                return Constants.RBS_BRANCH_2_2;
+                result = Constants.RBS_BRANCH_2_2;
+                break;
             case Constants.SANTANDER:
-                return Constants.SANTANDER_BRANCH_2_2;
+                result = Constants.SANTANDER_BRANCH_2_2;
+                break;
             case Constants.ULSTER:
-                return Constants.ULSTER_BRANCH_2_2;
+                result = Constants.ULSTER_BRANCH_2_2;
+                break;
             default:
-                return null;
+                throw new IllegalStateException("Unexpected value: " + brandName);
         }
+        logger.info("::getURIByBrand  Completed result -->{}", result);
+        return result;
     }
 }

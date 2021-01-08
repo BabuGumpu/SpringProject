@@ -5,6 +5,7 @@ package com.bank.controller;/*
  *
  */
 
+import com.bank.exception.ApiRequestException;
 import com.bank.pojo.BranchMain;
 import com.bank.service.BranchService;
 import org.slf4j.Logger;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
  *
  */
 @RestController
-@RequestMapping(path = "/branch")
 public class BranchController {
 
     private static final Logger logger = LoggerFactory.getLogger(BranchController.class);
@@ -29,26 +29,28 @@ public class BranchController {
         branchService = theBranchService;
     }
 
-    @RequestMapping(value = "/branches", method = RequestMethod.GET)
+    @GetMapping("/branch")
     @ResponseBody
     public ResponseEntity<BranchMain> getBranches() {
         logger.info("::getBranches  Started -->");
-        // This returns a JSON or XML with the users
-        logger.info("::getBranches  size -->{}", branchService.getBranches());
-        return branchService.getBranches();
+        ResponseEntity<BranchMain> responseEntity = branchService.getBranches();
+        return responseEntity;
     }
 
-    @RequestMapping(value = "/branches/brand/{brandName}", method = RequestMethod.GET)
+    @GetMapping("/branch/brand")
     @ResponseBody
-    public ResponseEntity<BranchMain> getBranchesByBrand(String brandName) {
-        logger.info("::getBranchesByBrand  Started -->");
-        // This returns a JSON or XML with the users
-        logger.info("::getBranchesByBrand  size -->{}", branchService.getBranches());
-        return branchService.getBranchesByBrand(brandName);
+    public ResponseEntity<BranchMain> getBranchesByBrand(@RequestParam(value = "brandName", required = true) String brandName) {
+        logger.info("::getBranchesByBrand  Started brandName -->{}", brandName);
+        ResponseEntity<BranchMain> responseEntity = branchService.getBranchesByBrand(brandName.toUpperCase());
+        return responseEntity;
     }
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+
+    @GetMapping("/greeting")
+    @ResponseBody
     public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+        logger.info("::greeting  Started name -->{}", name);
         model.addAttribute("name", name);
         return "greeting";
     }
 }
+

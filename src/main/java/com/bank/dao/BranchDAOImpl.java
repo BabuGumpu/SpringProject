@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -36,13 +37,18 @@ public class BranchDAOImpl implements BranchDAO {
 
     @Override
     public ResponseEntity<BranchMain> getBranchesByBrand(String brandName) {
-        logger.info("::getBranchesByBrand  Started -->");
-        final String uri = CommonUtils.getURIByBrand(brandName);
+        logger.info("::getBranchesByBrand  Started -->{}", brandName);
+        String uri = CommonUtils.getURIByBrand(brandName);
+        logger.info("::getBranchesByBrand  uri -->{}", uri);
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
-        ResponseEntity<BranchMain> branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
+        ResponseEntity<BranchMain> branchMain = null;
+        if (!StringUtils.isEmpty(uri)) {
+            logger.info("::getBranchesByBrand  uri  inside -->{}", uri);
+            branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
+        }
         logger.info("::getBranchesByBrand  Completed -->");
         return branchMain;
     }
