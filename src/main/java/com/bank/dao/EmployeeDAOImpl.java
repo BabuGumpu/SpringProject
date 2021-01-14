@@ -28,7 +28,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public List<Employees> getAllEmployees() {
         logger.info("::getAllEmployees  Started -->");
-        Query query = entityManager.createQuery("from employees");
+        Query query = entityManager.createQuery("from Employees", Employees.class);
         logger.info("::getAllEmployees  query -->{}", query.toString());
         logger.info("::getAllEmployees  End -->");
         return query.getResultList();
@@ -45,7 +45,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public long getTotalNumberOfEmployees() {
         logger.info("::getTotalNumberOfEmployees  Started -->");
-        Query query = entityManager.createQuery("from employees");
+        Query query = entityManager.createQuery("from Employees");
         logger.info("::getTotalNumberOfEmployees  query -->{}", query.toString());
         logger.info("::getTotalNumberOfEmployees  End -->");
         return query.getResultList().size();

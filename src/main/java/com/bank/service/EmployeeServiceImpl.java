@@ -16,6 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     EmployeeDAO employeeDAO;
+
     @Override
     public List<Employees> getAllEmployees() {
         return employeeDAO.getAllEmployees();
