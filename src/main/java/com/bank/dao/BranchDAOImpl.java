@@ -5,15 +5,20 @@ package com.bank.dao;/*
  *
  */
 
+import com.bank.common.CommonUtils;
 import com.bank.model.Branch;
 import com.bank.pojo.BranchMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
+import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -54,10 +59,35 @@ public class BranchDAOImpl implements BranchDAO {
     }
 
     @Override
-    public BranchMain getBranches() {
+    public ResponseEntity<BranchMain> getBranches() {
         logger.info("::getBranches  Started -->");
-        BranchMain branchMain = new BranchMain();
+        final String uri = "https://api.lloydsbank.com/open-banking/v2.2/branches";
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        logger.info("::getBranches headers -->{}", headers.toString());
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+        ResponseEntity<BranchMain> branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
+        //BranchMain branchMain = restTemplate.getForObject(uri, BranchMain.class);
         logger.info("::getBranches  End -->");
+        return branchMain;
+    }
+
+    @Override
+    public ResponseEntity<BranchMain> getBranchesByBrand(String brandName) {
+        logger.info("::getBranchesByBrand  Started -->{}", brandName);
+        String uri = CommonUtils.getURIByBrand(brandName);
+        logger.info("::getBranchesByBrand  uri -->{}", uri);
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+        ResponseEntity<BranchMain> branchMain = null;
+        if (!StringUtils.isEmpty(uri)) {
+            logger.info("::getBranchesByBrand  uri  inside -->{}", uri);
+            branchMain = restTemplate.exchange(uri, HttpMethod.GET, entity, BranchMain.class);
+        }
+        logger.info("::getBranchesByBrand  Completed -->");
         return branchMain;
     }
 }
