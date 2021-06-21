@@ -17,59 +17,38 @@ public class Employees {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "EMPLOYEE_ID")
-    private Integer employeeID;
+    @Column(name = "emp_no")
+    private Integer empNo;
 
-    @Column(name = "FIRST_NAME")
+    @Column(name = "birth_date")
+    private Date birthDate;
+
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "LAST_NAME")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "EMAIL")
-    private String email;
+    @Column(name = "gender")
+    private String gender;
 
-    @Column(name = "PHONE_NUMBER")
-    private String phoneNumber;
-
-    @Column(name = "HIRE_DATE")
+    @Column(name = "hire_date")
     private Date hireDate;
 
-    @Column(name = "JOB_ID")
-    private String jobID;
-
-    @Column(name = "SALARY")
-    private double salary;
-
-    @Column(name = "COMMISSION_PCT")
-    private double commissionPCT;
-
-    @Column(name = "MANAGER_ID")
-    private String managerID;
-
-    @Column(name = "DEPARTMENT_ID")
-    private String departmentID;
-
-    public Employees(Integer employeeID, String firstName, String lastName, String email, String phoneNumber, Date hireDate, String jobID, double salary, double commissionPCT, String managerID, String departmentID) {
-        this.employeeID = employeeID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.hireDate = hireDate;
-        this.jobID = jobID;
-        this.salary = salary;
-        this.commissionPCT = commissionPCT;
-        this.managerID = managerID;
-        this.departmentID = departmentID;
+    public Integer getEmpNo() {
+        return empNo;
     }
 
-    public Integer getEmployeeID() {
-        return employeeID;
+    public void setEmpNo(Integer empNo) {
+        this.empNo = empNo;
     }
 
-    public void setEmployeeID(Integer employeeID) {
-        this.employeeID = employeeID;
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getFirstName() {
@@ -88,20 +67,12 @@ public class Employees {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getGender() {
+        return gender;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Date getHireDate() {
@@ -110,45 +81,5 @@ public class Employees {
 
     public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
-    }
-
-    public String getJobID() {
-        return jobID;
-    }
-
-    public void setJobID(String jobID) {
-        this.jobID = jobID;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public double getCommissionPCT() {
-        return commissionPCT;
-    }
-
-    public void setCommissionPCT(double commissionPCT) {
-        this.commissionPCT = commissionPCT;
-    }
-
-    public String getManagerID() {
-        return managerID;
-    }
-
-    public void setManagerID(String managerID) {
-        this.managerID = managerID;
-    }
-
-    public String getDepartmentID() {
-        return departmentID;
-    }
-
-    public void setDepartmentID(String departmentID) {
-        this.departmentID = departmentID;
     }
 }
