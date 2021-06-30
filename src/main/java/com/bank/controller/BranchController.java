@@ -80,4 +80,6 @@ public class BranchController {
         return branchService.getTotalNumberOfBranches();
     }
 
+    //Get Branch by Brand name
+
 }
