@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS `branch_table`;
 DROP TABLE IF EXISTS `lookup_table`;
 DROP TABLE IF EXISTS `relationship_table`;
 
-CREATE TABLE `lookup_table` (
+CREATE TABLE `lookup_table`(
 	`lookup_id` INT NOT NULL AUTO_INCREMENT,
 	`code_data_type` varchar(255) NOT NULL,
 	`code` varchar(255) NOT NULL,
