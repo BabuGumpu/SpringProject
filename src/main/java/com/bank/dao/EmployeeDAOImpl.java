@@ -12,12 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
     private static final Logger logger = LoggerFactory.getLogger(EmployeeDAOImpl.class);
+
+    @PersistenceContext
     private EntityManager entityManager;
 
     @Autowired
@@ -26,8 +29,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public List<Employees> getAllEmployees() {
+    public List getAllEmployees() {
         logger.info("::getAllEmployees  Started -->");
+        //String hql = "FROM Employees";
+        //return entityManager.createQuery(hql).getResultList();
         Query query = entityManager.createQuery("from Employees", Employees.class);
         logger.info("::getAllEmployees  query -->{}", query.toString());
         logger.info("::getAllEmployees  End -->");
@@ -45,7 +50,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public long getTotalNumberOfEmployees() {
         logger.info("::getTotalNumberOfEmployees  Started -->");
-        Query query = entityManager.createQuery("from Employees");
+        Query query = entityManager.createQuery("from employees");
         logger.info("::getTotalNumberOfEmployees  query -->{}", query.toString());
         logger.info("::getTotalNumberOfEmployees  End -->");
         return query.getResultList().size();

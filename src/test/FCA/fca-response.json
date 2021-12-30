@@ -1,0 +1,152 @@
+{
+  "Status": "FSR-API-04-01-00",
+  "ResultInfo": {
+    "Next": "https://register.fca.org.uk/services/V0.1/search?q=BABU&pgnp=2",
+    "page": "1",
+    "per_page": "20",
+    "total_count": "109"
+  },
+  "Message": "Ok. Search successful",
+  "Data": [
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/508814",
+      "Status": "See full details",
+      "Reference Number": "508814",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "UAE EXCHANGE UK LIMITED (Postcode: w1d 3bs)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/941932",
+      "Status": "See full details",
+      "Reference Number": "941932",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Gopal Babu Shrestha (Postcode: 1100)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/545838",
+      "Status": "See full details",
+      "Reference Number": "545838",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Al Amin Travel Di Babu Masbaul Islam & C. Sas (Postcode: 001 76)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/690440",
+      "Status": "See full details",
+      "Reference Number": "690440",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Meenachisundaram Babu (Postcode: SS8 0LL)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/950633",
+      "Status": "See full details",
+      "Reference Number": "950633",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Nikesh Babu (Postcode: LE5 0QD)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/680295",
+      "Status": "See full details",
+      "Reference Number": "680295",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Babu Sivarajah (Postcode: ME14 2ND)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/683589",
+      "Status": "See full details",
+      "Reference Number": "683589",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Babu Palliyalimale Mathai (Postcode: IP4 2LA)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/688401",
+      "Status": "See full details",
+      "Reference Number": "688401",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Mohammed Babu (Postcode: G33 5NZ)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/695682",
+      "Status": "See full details",
+      "Reference Number": "695682",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Amjad Babu (Postcode: G33 2NW)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/694254",
+      "Status": "No longer authorised",
+      "Reference Number": "694254",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Vimalalohini Babu (Postcode: SS8 7ST)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/701283",
+      "Status": "No longer authorised",
+      "Reference Number": "701283",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Mr Babu & Mrs Santik Odedra (Postcode: LE3 8LQ)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/711554",
+      "Status": "See full details",
+      "Reference Number": "711554",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Babu Abraham (Postcode: EH7 5DL)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/580613",
+      "Status": "No longer authorised",
+      "Reference Number": "580613",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Narendra Babu Kandru (Postcode: NA)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/804550",
+      "Status": "No longer authorised",
+      "Reference Number": "804550",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "John Babu Chuzhukunnel (Postcode: 16124)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/588564",
+      "Status": "See full details",
+      "Reference Number": "588564",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Babu Joseph Kudiyirickal (Postcode: NA)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/603117",
+      "Status": "See full details",
+      "Reference Number": "603117",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Ramesh Babu Darsandhari "
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/777785",
+      "Status": "No longer authorised",
+      "Reference Number": "777785",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Tayyab Household Ltd (Postcode: NG7 5GP)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/789608",
+      "Status": "See full details",
+      "Reference Number": "789608",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Sritharan Kulantaivel (Postcode: 59494)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/596282",
+      "Status": "No longer authorised",
+      "Reference Number": "596282",
+      "Type of business or Individual": "Payment services firm",
+      "Name": "Ali Raza (Postcode: LU2 7QB)"
+    },
+    {
+      "URL": "https://register.fca.org.uk/services/V0.1/Firm/922195",
+      "Status": "Appointed representative - introducer",
+      "Reference Number": "922195",
+      "Type of business or Individual": "Firm",
+      "Name": "Malibu Bathrooms and Kitchens Ltd (Postcode: HA0 1BN)"
+    }
+  ]
+}
